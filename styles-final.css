@@ -1,0 +1,147 @@
+/* 最終調整用のスタイル */
+
+/* プレースホルダー画像の代替スタイル */
+.placeholder-image {
+  background-color: #f0f5ff;
+  border: 1px dashed #3366cc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3366cc;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* ヒーローセクションの背景 */
+.hero {
+  background: linear-gradient(135deg, rgba(51, 102, 204, 0.9), rgba(26, 51, 102, 0.9)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 0;
+}
+
+/* ロゴプレースホルダー */
+#logo-placeholder {
+  width: 200px;
+  height: 50px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3366cc;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* パフォーマンス最適化 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* アクセシビリティ改善 */
+.btn, a {
+  transition: all 0.3s ease;
+}
+
+.btn:focus, a:focus {
+  outline: 3px solid #ff6633;
+  outline-offset: 2px;
+}
+
+/* 印刷スタイル */
+@media print {
+  .header, .footer, .contact-section {
+    display: none;
+  }
+  
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* 最終調整 - モバイルナビゲーション */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  .nav-menu.active {
+    display: block;
+  }
+  
+  .nav-menu ul {
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .nav-menu li {
+    margin: 10px 0;
+  }
+}
+
+/* 読み込み速度最適化のためのスケルトンローディング */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* 最終的なカラー調整 */
+:root {
+  --primary-color: #3366cc;
+  --secondary-color: #ff6633;
+  --light-bg: #f8faff;
+  --dark-bg: #1a3366;
+  --text-color: #333333;
+  --light-text: #ffffff;
+  --accent-color: #66cc99;
+}
+
+.accent-color {
+  color: var(--accent-color);
+}
+
+.bg-accent {
+  background-color: var(--accent-color);
+  color: var(--light-text);
+}
